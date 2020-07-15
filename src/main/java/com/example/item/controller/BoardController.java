@@ -15,16 +15,31 @@ import java.util.Map;
 public class BoardController {
     @Autowired
     private BoardService boardService;
-    /**
-     * 添加看板
-     * @paramBoard要添加的看板对象
-     * @return
-     */
+
+    //添加
     @PostMapping("addBoard")
-    public Map getBoard(@RequestBody Board board){
+    public Board getBoard(@RequestBody Board board){
      log.debug(board.getName());
-     boardService.addBoard(board);
-     return Map.of();
+    return boardService.addBoard(board);
+
+
+    }
+
+    //查询看板信息
+    @GetMapping("findBoard/{id}")
+    public Board getBoard(@PathVariable int id){
+        return boardService.getBoard(id);
+    }
+    //删除看板信息
+    @GetMapping("deleteBoard/{id}")
+    public void deleteBoard(@PathVariable int id){
+         boardService.deleteBoard(id);
+    }
+    //更新看板
+    @PostMapping("updateBoard")
+    public Board updateBoard(@RequestBody Board board){
+        return boardService.updateBoard(board);
+
     }
 
 }

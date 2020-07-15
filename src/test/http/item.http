@@ -1,0 +1,53 @@
+POST http://localhost:8080/api/item/updateProject
+Content-Type: application/json
+
+{
+"id": "3",
+  "name": "打麻将"
+}
+
+###
+GET http://localhost:8080/api/item/findProject1/lol
+Accept: application/json
+
+###
+GET http://localhost:8080/api/item/findProject/4
+Accept: application/json
+
+###
+POST http://localhost:8080/api/item/addProject
+Content-Type: application/json
+
+{  "id": "7",
+  "name": "敲代码"
+}
+
+###
+//看板增删改查
+POST http://localhost:8080/api/item/updateBoard
+Content-Type: application/json
+
+{
+"id": "6",
+  "name": "姚世维"
+}
+
+###
+GET http://localhost:8080/api/item/deleteBoard/4
+Accept: application/json
+
+###
+GET http://localhost:8080/api/item/findBoard/14
+Accept: application/json
+
+###
+POST http://localhost:8080/api/item/addBoard
+Content-Type: application/json
+
+{
+"name": "姚世维",
+  "plan": "学习",
+  "position": "项目经理"
+}
+
+###

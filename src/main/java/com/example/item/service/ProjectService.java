@@ -8,16 +8,19 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ProjeceService {
+public class ProjectService {
     @Autowired
     private ProjectRepository projectRepository;
-    public Project getProject(Project project){
+    public Project addProject(Project project){
         return projectRepository.save(project);
     }
-    public Project getProject(int id){
+    public Project findProject(int id){
         return projectRepository.findById(id).orElse(null);
     }
-    public void updateProject(Project project){
-        projectRepository.save(project);
+    public List<Project> findProject1(String name){
+        return  projectRepository.findByName(name);
+    }
+    public Project updateProject(Project project){
+        return projectRepository.save(project);
     }
 }

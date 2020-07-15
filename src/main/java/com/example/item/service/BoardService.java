@@ -17,14 +17,14 @@ public class BoardService {
     public List<Board> getUser(String uname, String position){
         return boardRepository.findByNameAndPosition(uname,position);
     }
-    public void updateBoard(Board board){
-        boardRepository.save(board);
+    public Board updateBoard(Board board){
+       return boardRepository.save(board);
     }
-    public void deleteBoard(int bid){
-        boardRepository.deleteById(bid);
+    public void deleteBoard(int id){
+        boardRepository.deleteById(id);
     }
-    public void addBoard(Board board){
-        boardRepository.save(board);
+    public Board addBoard(Board board){
+        return boardRepository.save(board);
     }
 
 

@@ -13,7 +13,7 @@ public interface ProjectRepository extends BaseRepository<Project,Integer> {
 @Query("from Project p where p.id=:id")
     List<Project>List(@Param("id")int id);
 @Query("from Project p where p.name=:name")
-    List<Project>List(@Param("name")String name);
+    List<Project>findByName(@Param("name")String name);
 @Query("from Project p where p.id=:id and p.name=:pname")
     List<Project>deleteByIdAndName(@Param("id")int id,@Param("pname")String pname);
 
